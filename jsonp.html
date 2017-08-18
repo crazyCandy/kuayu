@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>alalashizi</title>
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+<script src='./ajax-cross-origin/js/jquery.ajax-cross-origin.min.js'></script>
+<script type="text/javascript">
+	$.ajax({
+		crossOrigin:true,
+
+		// type:'GET',
+		// url: 'http://api.wunderground.com/api/8ac447ee36aa2505/geolookup/conditions/q/IA/Cedar_Rapids.json',
+		url:'http://japi.juhe.cn/joke/content/list.from?sort=desc&page=1&pagesize=1&time=1418816972&key=0986f21c63c29aee8765bd47436d6914',
+		
+    // dataType: 'jsonp',
+    // jsonpCallback:"MyjsonpCallback", 
+    // async:true,
+    // dataFilter:function(data){
+    // 	console.log('it is dataFilter', data);
+    // },
+    context: {},
+    success:function(data){
+    	console.log('success');
+    	console.log(data);
+    },
+    error:function(data){
+    	console.log('error');
+    }
+	}).done(function( data, textStatus, jqXHR ) {
+			alert(data);
+		});
+	// function MyjsonpCallback(data){
+	// 	console.log('jinrucallback');
+	// 	console.log(data);
+	// }
+</script>
+</body>
+</html>
